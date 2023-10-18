@@ -1,0 +1,437 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
+int main(void) {
+  char nome[50], comida[50], nomeEspirito[1000], item[50], assinatura[50], desejo[100];
+  int espirito, ritual, confiar, inimigo, ataque, danoInimigo, danoUsuario, inimigo1, danoInimigo1, danoUsuario1, danoFinal, confirmar, presente, aprendiz; 
+  int espiritoHP = 1000, KassandraHP = 1000, inimigoHP = 1000, UsuarioHP = 1000, inimigo1HP = 1000, Usuario1HP = 1000, LauraHP = 1000, vidaFinal = 1000;
+  char nomeInimigo[1000], nomeInimigo1[1000];
+  
+  
+  printf("Digite seu nome? \n");
+  scanf("%s", nome); //%s para receber o nome
+  printf("Oi %s, tudo bem? Bem vindo ao Duelo de Celestia, aproveite o jogo. \n", nome);
+  printf("Carregando....\n");
+    printf("No ano de 1840, existia uma disputa entre invocadores por um antigo artefato, conhecido como o cálice de celestia, na qual quem ganhasse o duelo, o adquiria, e com ele em mãos você tem direito a 1 desejo que será realizado, sendo ele alcançável ou não.\nVocê foi escolhido pelo Cálice de Grandpoll, uma entidade antiga e poderosa, na qual você não pode ignorar o chamado, para o duelo de invocadores, e você tem direito a uma invocação de um espirito guerreiro:\n");
+    printf("Por favor, escolha o seu espirito guerreiro:\n 1)Asmodeus \n 2)Tatharof \n 3)Margot \nDigite o número referente ao seu espirito escolhido:\n");
+    scanf("%d", &espirito);
+if(espirito == 1){
+    strcpy(nomeEspirito, "Asmodeus");
+    printf("Você escolheu o Asmodeus como seu espirito guerreiro.\n");
+} else {
+    if(espirito==2){
+        strcpy(nomeEspirito, "Tatharof");
+        printf("Você escolheu o Tatharof como seu espirito guerreiro.\n");
+    } else{
+        if(espirito == 3){
+            strcpy(nomeEspirito, "Margot");
+            printf("Você escolheu a Margot como seu(sua) espirito(a) guerreiro(a).\n");
+        }
+    }
+}
+    printf("12/05/1840 (21:00)\n*Você entra em um bar, conhecido como bar dos trapaceiros em busca de um intermediador para lhe ajudar a invocar o seu espirito(a) guerreiro(a), andando mais a frente você encontra-o, assim iniciando um diálogo:\n- Oi, prazer. Meu nome é %s, você é o meu intermediador certo?!(YOU)\n - Sim. Prazer, me chamo Svarog, mas pode me chamar de Svar, sua primeira vez como invocador?(SVAROG)\n- Sim, Sr.Svar, onde e quando podemos começar o ritual?(YOU)\n- Amanha as 00:00, vá atrás da igreja de Valder, estarei la a sua espera.(SVAROG)\n- Sim, Sr.Svar.(YOU)\n13/05/1840 (00:00) - *você esta indo ao local marcado, chegando lá você nota que o Sr.Svar já está a sua espera.\n- Vamos meu jovem, o ritual precisa ser feito antes 00:30.(SVAROG)\n- Sim, Senhor.(YOU)\n", nome);
+    printf("O ritual se inicia, e Svarog lhe da 3 opções para começar o ritual: \n 1)Você inicia o ritual com seu sangue.\n 2)Você usa encantamentos.\n 3)você usa pedras místicas para a invocação.\n");
+    printf("Digite o número do ritual que você deseja fazer: \n");
+    scanf("%d", &ritual);
+    if(ritual==1){
+        printf("Voce escolheu o ritual com seu sangue.\n Assim, Svar lhe dar uma faca, voce corta a sua mão, e assim o ritual se inicia, voce sente que o ar começa a ficar denso, uma neblina surge, e um redemoinho se ergue em volta de vocês.\n -Sr.Svar isso é normal?\n -Sim, está tudo dentro do conforme.\n");
+        printf("Surge o %s.\n", nomeEspirito);
+    } else {
+        if(ritual==2){
+            printf("Você escolheu usar os encantamentos.\n Assim, Svar lhe dar um livro com todos os encantamentos permitidos, voce pega e começa a recitar as frases, com isso o ritual se inicia, você sente que o ar começa a ficar denso, uma neblina surge, e um redemoinho se ergue em volta de vocês.\n -Sr.Svar isso é normal?\n -Sim, está tudo dentro do conforme.\n");
+            printf("Surge o %s.\n", nomeEspirito);
+        } else{
+            if(ritual==3){
+                printf("Você escolheu usar as pedras místicas.\nAssim, Svar lhe da as pedras, você as posiciona de acordo com a instruções do Svar, com isso o ritual se inicia, voce sente que o ar começa a ficar denso, uma neblina surge,e um redemoinho se ergue em volta de vocês.\n -Sr.Svar isso é normal?\n -Sim, está tudo dentro do conforme.\n");
+                printf("Surge a %s.\n", nomeEspirito);
+            }
+        }
+    }
+    printf("*%s vai em sua direção.*\n", nomeEspirito);
+    printf("-Olá, Mestre(a), agradeço por me escolher como seu espirito guerreiro, lhe garantirei a vitória nesta guerra, para que você possa realizar seu desejo.(WARRIOR SPIRIT)\n-ah...obrigado?!(YOU)\n");
+    printf("-%s e %s, o caminho que vocês iram travar apartir de agora não será fácil, então sugiro que vão para JohFalls, uma cidade onde encontrarão diversos outros mestres e invocadores. Alie-se com os outros, para garantir a vitória, eles podem lhe ensinar algo importante, suponho que meu trabalho aqui esteja finalizado, boa sorte para vocês.(SVAROG)\n", nomeEspirito, nome);
+    printf("*Svar some diante da neblina que os cercam.\n%s e %s procuram uma hostelaria para passarem o resto da noite.*\n", nomeEspirito, nome);
+    printf("(02:00)*Chegando na hostelaria, %s pede 1 quarto com 2 camas, a atendente encara a beleza de %s e suas vestimentas.*\n", nome, nomeEspirito);
+    printf("Depois de alguns minutos, vocês sobem para o quarto e descansam o resto da noite.");
+    printf("14/05/1840\n(10:00)\n*Acordado, você olha para a cama de %s e ve que ele(a) não esta na cama. Levantando, você vai direto para o banheiro, toma banho, se veste e desce para o terreo. \n");
+    printf("Ao chegar no buffet, você encontra %s em uma mesa, tomando cafe, você se junta a ele(a).\n", nomeEspirito);
+    printf("-Bom dia Mestre(a), teve uma noite boa e tranquila?.(wARRIOR SPIRIT)\n");
+    printf("-Bom dia %s, sim e você? e você não precisa ser tão formal, pode me chamar de %s.(YOU)\n", nomeEspirito, nome);
+    printf("-Tudo bem, já que prefere assim, irei chama-lo(a) de %s.(WARRIOR SPIRIT)\n", nome);
+    printf("-Ah sim é melhor, vou pedir algo para comer e assim que eu terminar podemos ir para johFalls.(YOU)\n");
+    printf("*Você chama o garcom.*\n");
+    printf("-Pois não Sr(a).%s?(GARÇOM)\n", nome);
+    printf("-Eu queria consultar o cardapio.(YOU)\n");
+    printf("-Devo lhe informar que não utilizamos o cardápio, o que você pedir iremos providenciar.(GARÇOM)\n");
+    printf("-Ah...Ok, então eu vou querer um(a):\nDigite o que voce deseja comer.\n");
+    scanf("%s", comida);
+    printf("-Ok Sr(a)%s.\n",nome);
+    printf("-Depois de alguns minutos o garcom traz a sua comida\n-Aqui esta Senhor(a), o seu/sua %s.\n", comida);
+    printf("*Depois de comer, %s e %s pegam a estrada para JohFalls.\n",nome, nomeEspirito);
+    printf("*Depois de alguns dias %s e %s chegam na bela cidade de JohFalls, uma cidade de repleta de tecnologias avançadas para a época.\n", nome, nomeEspirito);
+    printf("18/05/1840\n(22:00)\n-Até que enfim chegamos, vamos procurar um hotel para nós hospedar.\n");
+    printf("-Sim, Mestre(a) %s.\n", nome);
+    printf("De repente, uma moça para vocês na rua\n");
+    printf("-Oi,tudo bem? Qual é o seu nome? me chamo Laura, sou uma invocadora, percebi que voce é também por conta do seu amigo(a) ai do lado, e também, da marca em seu pulso\n");
+    printf("-Oi, me chamo %s, prazer em te conhecer, tudo sim Laura e contigo? ah sim, o meu/minha amigo(a) é o meu/minha espirito(a) guerreiro(a) o(a) %s, e sobre a marca no pulso, so reparei agora nisso, poderia me dizer o que é?\n",nome, nomeEspirito);
+    printf("-Tudo sim, prazer. Essa marca em seu pulso é a quantidade de eidolons que voce possui, os eidolons são ordens que voce utiliza para usar um poder ou o supremo do(a) seu/sua espirito(a) guerreiro(a), todos os invocadores começam com 9 eidolons, cada vez que você der uma ordem, será -1 eidolon\n");
+    printf("-Ah sim, entendi. Então se eu mandar o %s soltar um poder basico agora, ele solta e diminiu os meus eidolons.\n", nomeEspirito);
+    printf("*%s acaba soltando um poder basico no meio da rua assustando as pessoas ao redor.*\n", nomeEspirito);
+    printf("Voce possui -1 eidolon.\nVoce tem 8 eidolons restantes.\n");
+    printf("-Como eu havia dito, você perde eidolons quando você da uma ordem para o %s\n", nomeEspirito);
+    printf("-Droga, ao menos tenho 8 ainda, talvez não seja tão ruim assim.\n");
+    printf("-Se voce acha...Mas esquecendo isso, essa é a minha espirita guerreira a Kassandra, se você quiser podemos juntar forças até o duelo...só estou nessa guerra porque infelizmente fui chamada, mas não tenho interesse algum no santo graal.\n");
+    printf("*Voce pensa.*\n");
+    printf("-Qual vai ser sua resposta?\n(1)sim\n(2)nao\n");
+    printf("Digite o número correspondente: \n");
+    scanf("%d", &confiar);
+    if(confiar==1){
+        printf("-Sim, irei me juntar com você no duelo de Celestia\n");
+        printf("-Que otimó, ja que somos aliados até o duelo, vamos nos preparar desde já.\n");
+        printf("-Tudo bem.\n");
+        printf("%s e Laura, andam em direção a uma floresta, adentrando a floresta escura e densa, vocês chegam em um local aberto, um pouco longe da cidade\n", nome);
+        printf("-Vamos treinar um pouco, me mostre o que você sabe.\n");
+        printf("-é a minha primeira vez como invocador, pega leve comigo.");
+        printf("*Assim, você e Laura convocam os seus espiritos e começa uma luta entre eles(a).\n");
+      while (KassandraHP > 0 && espiritoHP > 0) {
+        printf("Kassandra: HP %d.\n%s: HP %d\n", KassandraHP, nomeEspirito, espiritoHP);
+        printf("*Kassandra, usando uma espada, dá um ataque básico em %s, causando 150 de dano.\n", nomeEspirito);
+        espiritoHP -= 150;
+        printf("%s sofreu 150 de dano.\n%s status: Hp %d.\n", nomeEspirito, nomeEspirito, espiritoHP);
+        if (espiritoHP <= 850) {
+          printf("*É hora de devolver o dano que Kassandra lhe deu*\n", nomeEspirito);
+          printf("Escolha o ataque que você quer utilizar:\n");
+          printf("(1)Ataque Básico (DMG: 250)\n(2)Ataque Especial(DMG:450)\n(3)Supremo(DMG:500)\n");
+          
+          int treino;
+          scanf(" %d", &treino);
+
+          if (treino == 1) {
+            printf("*Você causou 250 de dano à Kassandra*\n");
+            KassandraHP -=250;
+              printf("Kassandra Status:\nHp: %d\n%s Status:\nHp: %d\n", KassandraHP, nomeEspirito, espiritoHP); 
+            continue;
+          } else if (treino == 2) {
+            printf("*Você causou 450 de dano à Kassandra*\n");
+            KassandraHP -=450;
+            printf("Kassandra Status:\nHp: %d\n%s Status:\nHp: %d\n", KassandraHP, nomeEspirito, espiritoHP);
+            continue;
+          } else if (treino == 3) {
+            printf("*Algo saiu do controle e %s acabou causando 1000 de dano à Kassandra*\n", nomeEspirito);
+            KassandraHP -=1000;
+            printf("Kassandra Status:\nHp: %d\n%s Status:\nHp: %d\n", KassandraHP, nomeEspirito, espiritoHP);
+            printf("Kassandra foi derrotada!.\n");
+          } 
+          
+        }
+          printf("-Parabéns novato, se leva jeito pra coisa, sua família já participou do duelo? ou e a primeira vez ?\n");
+            printf("-Primeira vez da minha família, e a minha primeira vez também, e você?\n");
+            printf("-Minha família participa a bastante tempo, ja que a guerra so acontece a cada 10 anos, e essa é a minha segunda vez participando.\n");
+            printf("-Sua segunda vez?? se tem quantos anos? desculpa perguntar.\n");
+            printf("-eu tenho 34 anos, sei que não parece, mas é haha.\n");
+            printf("-Realmente você não aparenta ter 34 haha.\n");
+            printf("*Depois de algumas horas conversando, %s e Laura, voltam para cidade em busca de algum lugar para passar a noite.*\n", nome);
+            printf("(19/05/1840) *Você acorda, e percebe que Laura e %s ja se levantaram.*\n*Voce levanta da cama e desce, e lá você os encontra tomando cafe.\n", nomeEspirito);
+          printf("-Bom dia %s, dormiu bem? não podemos demorar, come o que tem que comer e vamos meter o pé na estrada.\n", nome);
+          printf("-Bom dia pra ti também Laura, e sim dormi bem e você? prometo não demorar.\n");
+          printf("*Você toma seu cafe, avisa a Laura que já podem ir, e assim voces vão em direção a cidade de GasGafrothe.*\n");
+          printf("*Chegando em GasGafrothe, %s e Laura vão direto ao Palácio, que ficava no centro da cidade, para falar com o invocador Fazmuth.*\n", nome);
+          printf("-Laura, o que viemos fazer aqui?\n");
+          printf("-Viemos nos declarar participantes do duelo oficialmente, eu e você, Kassandra e o(a) %s.\nPrecisamos fazer isso para que pessoas que não participam não sejam atacadas, mesmo com essa burocracia ainda acontece de participantes atacarem civis.\n", nomeEspirito);
+          printf("-Entendi.\n");
+          printf("*Vocês se aproximam de uma moça, informam que vocês vieram se declarar como participantes do duelo, e assim ela faz algumas perguntas e pedem para vocês assinarem os seus nomes.");
+          printf("-Por favor, assine aqui, seu primeiro nome e o nome da sua familia.");
+          printf("-É a primeira vez dele, e de sua família, logo ele deve escolher o nome da familia dele?\n");
+          printf("-Sim, você assina seu nome, e já que sua família nunca participou não será necessário sobrenome.\n");
+          printf("Assine o nome que você deseja usar durante o duelo:\n");
+          scanf("%s", &assinatura);
+          printf("-Quando sairem de GasGafrothe, vocês deveram priorizar o nome e sobrenome, caso tenham sobrenome, que assinaram aqui.\nBoa sorte para vocês dois, que Lilith os protejam e os guiem em suas jornadas.\n");
+          printf("-Obrigado, desejamos o mesmo para você.\n");
+          printf("*%s e Laura saem de GasGafrothe, e vão para a cidade que foi definida como o campo de batalha, uma cidade normal como qualquer outra, porém seus residentes são invocadores, que almejam o santo graal, a cidade era conhecida como Fuyuki.*\n", nome);
+          printf("*Chegando em Fuyuki vocês já se deparam com vários invocadores, onde uns pareciam ser novatos, assim como você, e outros que já possuiam bastante conhecimento acerca da guerra.*\n*Vocês são abordados por uma dupla, bem vestidos e com várias joias.\n*");
+          printf("-Oi, você deve ser a Laura, né?! Prazer, meu nome é Sebastian Froz e esse é meu irmão, Humber Froz, somos invocadores nivel 5, é a nossa segunda no duelo, e queriamos fazer alianças com pessoas experientes, para que depois do duelos possamos treinar, e todos sabem que você é essa pessoa. O que me diz?(SEBASTIAN FROZ)\n");
+          printf("-Pelo visto a famália Froz gosta de aparecer na frente dos novatos, quando vocês nem se quer chegaram perto de conquistar o graal, e sim eu sou a Laura, e não irei fazer alianças com pessoas fajuntas como vocês.(LAURA)\n");
+          printf("-Laura? se acalma, eles só perguntaram se a gente queria fazer aliança com eles, nada demais.\n");
+          printf("-%s eles não querem fazer aliança, são pessoas podres, eles são participantes que ataca quem estiver na frente deles, seja participante ou não, e além do mais, já fiz aliança com eles no passado, e na primeira oportunidade me apunhalaram pelas costas, e nem assim conquistaram o calice hahaha.\n-Vamos andando %s, eu não quero começar lutando na entrada da cidade.\n", nome, nome);
+          printf("*%s e Laura saem andando rápido, você percebe que Laura está com muita raiva.*\n", nome);
+          printf("-Ai, eles tiveram sorte que nós encontramos na entrada da cidade, por que senão eu teria os atacados.\n");
+          printf("-E porque você não atacou?\n");
+          printf("-Existe uma regra na cidade, não se pode atacar os outros na entrada da cidade, pois a madeira da entrada é muito rara e que deve ser preservada, ao menos isso todo mundo segue a risca já que a punição é a morte.\n");
+          printf("-Nossa...\n");
+          printf("*O dia vai se esvaindo, e com a chegada da noite, vocês procuram o hotel da cidade, na qual foi construida exclusivamente para participantes do duelo, assim como a cidade, vocês chegam ao hotel, informam seus nomes e sobem para seus respectivos quartos.*\n");
+          printf("*Um comunicado é repassado para todos por meio de um aparelho arcaico, o recado era:'-Voces devem descer para tomarem café e assim dar inicio aos duelos, escolhendo seus oponentes.'\n");
+          printf("*Você toma café, logo em seguida sai para fora do hotel, para escolher o seu adversário.\n");
+        printf("*Você vai no quarto de Laura e percebe que a mesma não está lá.\n");
+          printf("-Bom dia Senhoras e Senhores, hoje daremos início a Duelo do Santo Graal, lhes serão dados alguns adversários para que você escolha.\n");
+          printf("As opções de adversários são:\n(1)Sther Fujikuma\n(2)Rimuru Tempest\n(3)Shirou Kotomine\n");
+          printf("Escolha seu adversário:\n");
+          scanf("%d", &inimigo);
+          if (inimigo == 1){
+            strcpy(nomeInimigo, "Sther Fujikuma");
+          } else {
+            if(inimigo == 2){
+              strcpy(nomeInimigo, "Rimuru Tempest");
+            } else {
+              if(inimigo == 3){
+                strcpy(nomeInimigo, "Shirou Kotomine");
+              }
+            }
+          }
+
+          printf("Seu adversário é: %s.\n", nomeInimigo);
+          printf("*Você é direcionado a uma parte deserta da cidade, e logo em seguida %s sai de trás de uma casa.\n", nomeInimigo);
+          printf("-Então é você o novato que me escolheu, muita coragem sua escolher logo um experiente, mas não vou me gabar, vamos ver do que você é capaz.\n");
+          printf("'mas não vou me gabar' mas já se gabando né!?...Vou tentar pegar leve com você.\n");
+          printf("*Assim inicia-se uma luta entre %s vs %s.\n", assinatura, nomeInimigo);
+          printf("-Então vamos começar logo, quanto mais rápido for melhor.\n");
+            srand(time(NULL)); // Inicializa a semente para rand() com o tempo atual
+
+            while (inimigoHP > 0 && UsuarioHP > 0) {
+                printf("%s: HP %d.\n%s: HP %d.\n", nomeInimigo, inimigoHP, assinatura, UsuarioHP);
+                printf("Escolha o tipo de ataque:\n(1) Ataque normal\n(2) Ataque Especial\n(3) Supremo\n");
+                int ataque;
+                scanf("%d", &ataque);
+
+                int escolhaInimigo = rand() % 3 + 1;
+
+                if (ataque == 1) {
+                    ataque = 350;
+                } else if (ataque == 2) {
+                    ataque = 450;
+                } else if (ataque == 3) {
+                    ataque = 500;
+                } else {
+                    printf("Escolha inválida! Escolha novamente.\n");
+                    continue;
+                }
+
+                if (escolhaInimigo == 1) {
+                    escolhaInimigo = 200;
+                } else if (escolhaInimigo == 2) {
+                    escolhaInimigo = 300;
+                } else if (escolhaInimigo == 3) {
+                    escolhaInimigo = 450;
+                }
+
+                UsuarioHP -= escolhaInimigo;
+                inimigoHP -= ataque;
+
+                printf("%s causou %d de dano à %s.\n", nomeEspirito, ataque, nomeInimigo);
+                printf("%s causou %d de dano à %s.\n", nomeInimigo, escolhaInimigo, nomeEspirito);
+
+                if (UsuarioHP <= 0) {
+                    printf("Você morreu. Sua vida chegou a zero.\n");
+                  printf("-Esperava mais de você novato, seu espirito é de classe S, caso não saiba, e ainda consegui perder para o meu que é classe D, mas quem sabe daqui a 10 anos você não ganha hahahaha.\n");
+                  printf("O vencendor(a) é %s.\n%s e seu espirito %s, estão fora do duelo.\n", nomeInimigo, assinatura, nomeEspirito);
+                  printf("Você perdeu! FIM DE JOGO.\n");
+                  exit(0);
+                } else if (inimigoHP <= 0) {
+                    printf("%s venceu! A saúde de %s chegou a zero.\n", nomeEspirito, nomeInimigo);
+                  printf("-Parabéns %s! agora, escolha o seu próximo adversário, e boa sorte.\n", assinatura);
+                  printf("(1)Himeko Takashi\n(2)Yaquing Tojiro\n(3)Gamora Steel\n");
+                  printf("Escolha seu adversário:\n");
+                  scanf("%d", &inimigo1);
+                  if (inimigo1 == 1){
+                    strcpy(nomeInimigo1, "Himeko Takashi");
+                  } else {
+                    if (inimigo1 == 2){
+                      strcpy(nomeInimigo1, "Yaquing Tojiro");
+                    } else {
+                      if (inimigo1 == 3){
+                        strcpy(nomeInimigo1, "Gamora Steel");
+                      }
+                  }
+                }
+                  printf("Você escolheu %s.\n", nomeInimigo1);
+                  printf("%s permanece no local e espera o próximo adversário, na qual será %s.\n", assinatura, nomeInimigo1);
+                  printf("%s chega ao seu encontro.\n", nomeInimigo1);
+                  printf("-Olá %s, tudo bem? é uma honra poder lutar contra você, desejo boa sorte para ambos, e que vença o melhor.\n", assinatura);
+                  printf("-Tudo, e obrigado lhe desejo o mesmo.\n");
+                  srand(time(NULL));
+                  while (inimigo1HP > 0 && Usuario1HP > 0){
+
+                    printf("%s: HP %d.\n%s: HP %d.\n", nomeInimigo1, inimigo1HP, nomeEspirito, Usuario1HP);
+                    printf("Escolha o tipo de ataque:\n(1)Ataque normal\n(2)Ataque Especial\n(3)Supremo\n");
+                    int ataque1;
+                    scanf("%d", &ataque1);
+                    int escolhaInimigo1 = rand() % 3 + 1;
+                    if (ataque1 == 1){
+                      ataque1 = 350;
+                    } else if (ataque1 == 2){
+                      ataque1 = 450;
+                    } else if (ataque1 == 3){
+                      ataque1 = 500;
+                    } else {
+                      printf("Escolha inválida! Escolha novamente.\n");
+                      continue;
+                    }
+                    if (escolhaInimigo1 == 1){
+                      escolhaInimigo1 = 200;
+                    } else if (escolhaInimigo1 == 2){
+                      escolhaInimigo1 = 300;
+                    } else if (escolhaInimigo1 = 3){
+                      escolhaInimigo1 = 450;
+                    }
+                    Usuario1HP -= escolhaInimigo1;
+                    inimigo1HP -= ataque1;
+
+                    printf("%s causou %d de dano à %s.\n", nomeEspirito, ataque1, nomeInimigo1);
+                    printf("%s causou %d de dano à %s.\n", nomeInimigo1, escolhaInimigo1, nomeEspirito);
+
+                    if (Usuario1HP <= 0){
+                      printf("%s morreu.\n", nomeEspirito);
+                      printf("-Obrigado Sr(a).%s pela luta, sinto-me honrado, e se aceita dicas, use seus ataques com sabedoria na próxima vez que participar do duelo.\n", assinatura);
+                      printf("VOCÊ PERDEU.\nFIM DE JOGO!!!\n");
+                      exit(0);
+                    } else if (inimigo1HP <= 0){
+                      printf("%s morreu.\n", nomeInimigo1);
+                      printf("-Obrigado pela luta Sr(a).%s, levarei esse duelo comigo em forma de aprendizado, para que eu possa ser melhor e mais forte na próxima vez.\n", assinatura);
+                      printf("-De nada, faço das suas palavras as minhas.\n");
+                      printf("-Agora será seu ultimo duelo, esse vai definir se você vai ser digno ou não de usar o poder do santo graal.\n");
+                      printf("-AGORA, ULTIMO DUELO PARA DEFINIR QUEM SERÁ DIGNO DO SANTO GRAAL, DE UM LADO LAURA VANDERGAL, SUA FAMÍLIA VEM SE DESTACANDO AS 5 DUELOS CONSECUTIVOS, SERÁ QUE ELES VÃO VENCER MAIS UM ANO??.E DO OUTRO LADO %s QUE ENTROU NO DUELO RECENTEMENTE, SUA FAMÍLIA É DESCONHECIDA, SERÁ QUE VAI TIRAR A FAMÍLIA VANDERGAL DO TOPO?.\n", assinatura);
+                      printf("-Oi de novo %s, espero que tenha se preparado o suficiente. E boa sorte.\n", nome);
+                      printf("-Por favor senhorita Vandergal, dirija a palavra ao oponente usando seu nome assinatura escolhido por tal.\n");
+                      printf("-Ah esqueci, tudo bem.\n-%s, boa sorte.\n", assinatura);
+                      printf("-Obrigado senhorita Vandergal, boa sorte para a mesma.\n");
+                      srand(time(NULL));
+                      while(vidaFinal > 0 && LauraHP > 0){
+                        printf("%s: HP %d.\nLaura: HP %d.\n", nomeEspirito, vidaFinal, LauraHP);
+                        printf("Escolha o tipo de ataque:\n(1)Ataque normal\n(2)Ataque Especial\n(3)Supremo\n");
+                        int ataqueF;
+                        scanf("%d", &ataqueF);
+                        int escolhaLaura = rand() % 3 + 1;
+
+                        if (ataqueF == 1){
+                          ataqueF = 350;
+                        } else {
+                          if (ataqueF == 2){
+                            ataqueF = 450;
+                          } else {
+                            if (ataqueF == 3){
+                              ataqueF = 500;
+                            } else {
+                              printf("Escolha inválida! Escolha novamente.\n");
+                              continue;
+                            }
+                          }
+                        }
+                        if (escolhaLaura == 1){
+                          escolhaLaura = 350;
+                        } else if (escolhaLaura == 2){
+                          escolhaLaura = 450;
+                        } else if (escolhaLaura == 3){
+                          escolhaLaura = 500;
+                        }
+                        vidaFinal -= escolhaLaura;
+                        LauraHP -= ataqueF;
+
+                        printf("%s causou %d de dano à Laura.\n", nomeEspirito, escolhaLaura);
+                        printf("Kassandra causou %d de dano à %s.\n", escolhaLaura, nomeEspirito);
+
+                        if (vidaFinal <= 0){
+                          printf("%s morreu.\n", nomeEspirito);
+                          printf("-É %s pelo visto não foi dessa vez, mas você deu o seu melhor, pra quem entrou agora no duelo, se até que é bem forte, so falta treino mesmo, venha ao meu encontro na cidade Thankal, pergunte aos moradores onde eu moro e lhe dirão, vou prepara-lo para o próximo duelo do santo graal.\n", assinatura);
+                          printf("-Foi uma luta e tanto, e aceitarei sua proposta, te vejo lá em Thankal, Mestra.");
+                          printf("*Laura sorri e vai em direção ao graal para tomar posse do que é seu*\n");
+                          printf("-A VITÓRIA É DELA, LAURA VANDERGAL, TRAZENDO MAIS UMA VITÓRIA A SUA FAMÍLIA, E ASSIM SENDO VENCENDORES PELA 6° VEZ NO DUELO DO GRAAALLL.\n-Parabéns Laura, faça bom uso do graal.\n");
+                          printf("*Laura pega o graal e faz o seu pedido. O seu pedido é...\n");
+                          exit(0);
+                        } else if (LauraHP <= 0){
+                          printf("Kassandra perdeu.\n");
+                          printf("-Olha, pelo visto você se saiu muito bem, muito além do que eu havia imaginado, mas parabéns pela vitória merecida. Te vejo no próximo duelo do Santo Graal.\n");
+                          printf("-A VITÓRIA É DELE, %S É O VENCEDOR DO DUELO DO SANTO GRAAL, PARA UM NOVATO ELE ESTA MUITO A FRENTE DO SEU TEMPO.\n-Parabéns novamente %s, faça um bom uso do Graal.\n", assinatura, assinatura);
+                          printf("*%s vai em direção ao Graal para reivindicar o que é seu*.\n", assinatura);
+                          printf("Qual o seu desejo ao Santo Graal?\n");
+                          scanf(" %99[^\n]", desejo);
+                          printf("Confirme o seu desejo:\n(1)Sim\n(2)Não\n");
+                          scanf("%d", &confirmar);
+                          if (confirmar == 1){
+                            printf("Seu desejo foi realizado!.\n");
+                            printf("Você pode escolher outros utensílios ou roupas que lhe agradarem oferecido por outros mestres que acompanharam os duelos.\n");
+                            printf("-Olá %s, ofereço-lhe 1kg de joias banhadas em ouros.Aceita?\nVocê aceita?\nDigite:\n(1)Sim\n(2)Não\n", assinatura);
+                            scanf("%d", &presente);
+                            if(presente == 1){
+                              printf("-Obrigado pelo presente Sr.?\n");
+                              printf("-Ah, pode me chamar de Lucius, e eu que agradeço pelo espetáculo. E parabéns pela vitória.\n");
+                              printf("-Obrigado, Lucius.\n");
+                              printf("*Lucius sai andando, e vem chegando outra pessoa*\n");
+                              printf("-E ai campeão, quero lhe oferecer um brasão de aprendiz, faço aqui um convite para você para ser treinado por mim. O que me diz.\n");
+                              printf("-Oi Laura, humm deixa eu pensar...1 minuto.\nVocê aceita o convite de Laura para ser aprendiz dela?\nDigite:\n(1)Sim\n(2)Não\n");
+                              scanf("%d", &aprendiz);
+                              if(aprendiz == 1){
+                                printf("-Sim, aceito ser seu aprendiz.\n");
+                                printf("Que ótimo, iremos começar na próxima semana, sabe onde me encontrar. Até mais, %s", nome);
+                                printf("PARABÉNS %s VOCÊ GANHO O DUELO DE CELESTIA.\n", nome);
+                                exit(0);
+                              } else if(aprendiz == 2){
+                                printf("-Não, mas obrigado pela convite, vou viajar por ai, e ir treinando sozinho, qualquer coisa se eu mudar de idéia eu te procuro, sei onde te achar. Até mais.\n");
+                                printf("-Ah, tudo bem, pode me procurar, estarei te esperando. Até mais.\n");
+                                printf("PARABÉNS, VOCÊ GANHO O DUELO.\n");
+                                exit(0);
+                              }
+                            } else if(presente == 2){
+                              printf("-Agradeço, mas prefiro não aceitar. Mas obrigado mesmo assim.\n");
+                              printf("-Tudo bem, não há problema em recusar. Você lutou bem, parabéns pelos duelos e pela vitória.\n");
+                              printf("-Muito obrigado.\n");
+                              printf("PARABÉNS, VOCÊ TERMINOU O JOGO COMO UM VENCEDOR.\n");
+                              exit(0);
+                            }
+                          } else {
+                            if (confirmar == 2){
+                              printf("Você perdeu sua chance de pedir algo ao Graal.\n");
+                              exit(0);
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+            }
+        
+}
+        
+    }
+  
+} else if (confiar == 2){
+      printf("-Desculpe, mas eu prefiro nao fazer alianças em uma guerra, mesmo assim obrigado pelo convite.(YOU)\n");
+        printf("-Ah, tudo bem então, espero que você tenha sorte em suas batalhas para conquistar o calice de Celestia.(LAURA)\n");
+        printf("-Muito obrigado(a) Laura, desejo-lhe o mesmo para você, mesmo não querendo o calice, o que não faz muito sentido, mas tudo bem.(YOU)\n");
+        printf("-Não me importo se é estranho ou não, só estou participando mesmo por que, infelizmente, não posso recusar.(LAURA)\n");
+        printf("*Laura sai andando em direção oposta a sua, assim sendo capaz de não se encontrarem novamente.*\n");
+        printf("*Voce sai andando pela cidade afim de conhecer mais a cidade por dentro.*\n Andando um pouco mais voce se depara com um senhor lhe encarando, sua pele era branca, seu rosto era flácido, o tal aparentava ter 70 a 80 anos, assim chamando-o para falar com ele.\n");
+      printf("-Olá meu jovem, não deixei de reparar que seu amigo é um ser mágico, devido as suas vestimentas, como ele se chama?\n(OLDMAN)");
+      printf("-Oi?! sim, ele(a) se chama %s, e você como se chama?.\n", nomeEspirito);
+      printf("-Me chamo Dotore, sou um anitgo participante desta guerra, pelo menos o unico que restou disso tudo...é melhor os outros do que eu hahaha.(OLDMAN)\n");
+        printf("-E o seu meu jovem, como se chama, me desculpe por nao perguntar.(DOTORE)\n");
+        printf("-Meu nome e %s, prazer em lhe conhecer Dotore.\n(YOU)", nome);
+        printf("-Ja que voce e o unico sobrevivente, voce me daria alguma dica?(YOU)\n");
+        printf("-suponhamos que sim, mas o que eu ganharia em troca? nao posso sair por ai falando tudo que sei, né!?\n");
+        printf("-Acredito que eu nao tenha bastante coisa, mas vamos ver.\n");
+        printf("*Abrindo a sua mochila as suas opcoes sao:*\n");
+        printf("(1)Um bracelete de ouro\n(2)Um vinho antigo\n(3)Roupas velhas\n");
+        printf("O bracelete foi um presente de sua avó quando voce tinha 15 anos.\nO vinho antigo, voce nao sabe como foi parar na sua mochila, mas oferece a dotore.\nAs roupas, sao algumas roupas suas.\n");
+        printf("Qual item voce deseja oferecer ao Dotore?\n");
+        scanf("%s", &item);
+
+        if (item==1){
+          printf("*Voce da o bracelete de ouro para Dotore.*\n");
+        } else {
+          if (item==2){
+            printf("*Voce deu o vinho que parece ser antigo, de procedencia duvidosa.*\n");
+          } else {
+            if (item==3){
+              printf("*Voce deu as suas roupas velhas.*\n");
+            }
+          }
+        }
+         printf("Obrigado %s, farei bom uso hahaha.\n", nome);
+        printf("-Ja que voce me deu algo em troca, vou lhe dizer, o segredo é... nao confiar em niguem.\n");
+        printf("*Dotore saca uma faca e lhe esfaqueia varias vezes, ate o fim. E leva os restos de seus pertences. Como voce nao deu nenhuma ordem de ataque para %s, ele nao pode fazer nada.*\nApos seu coracao parar %s foi sumindo aos poucos ate desaparecer por completo.\n", nomeEspirito, nomeEspirito);
+        printf("Voce esta morto.\nFIM DE JOGO.\n");
+        exit(0);
+      }
+return 0;
+}
+
